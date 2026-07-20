@@ -1,0 +1,100 @@
+.page {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.quote-form label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.quote-form label:first-of-type {
+  margin-top: 0;
+}
+
+.quote-form select,
+.quote-form input {
+  font: inherit;
+  color: inherit;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.quote-form button {
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.quote-form button:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.quote-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error {
+  color: var(--error);
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.quote-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.quote-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.quote-list li:last-child {
+  border-bottom: none;
+}
+
+.quote-list .destination {
+  flex: 1;
+  text-transform: capitalize;
+}
+
+.quote-list .weight {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.quote-list .cost {
+  font-weight: 600;
+  min-width: 64px;
+  text-align: right;
+}
