@@ -11,6 +11,15 @@ const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN ?? "http://localhost:5173";
 app.use(cors({ origin: CLIENT_ORIGIN }));
 app.use(express.json());
 
+// Root route so the base URL returns useful info instead of a 404.
+app.get("/", (_req, res) => {
+  res.json({
+    name: "shipquote-api",
+    status: "ok",
+    endpoints: ["/health", "/quotes"],
+  });
+});
+
 // Establish (and cache) the database connection as part of the request
 // lifecycle rather than at server startup, so the same app works in a
 // serverless environment where there is no long-lived startup phase.
@@ -28,3 +37,6 @@ app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   console.error(err);
   res.status(500).json({ error: "Internal server error" });
 });
+
+// Vercel's Express framework preset serves the app from its default export.
+export default app;
