@@ -12,7 +12,7 @@ describe("calculateShippingCost", () => {
 
     it("adds the per-kg rate ($2/kg) on top of the base rate", () => {
       // 5 + 2 * 10 = 25
-      expect(calculateShippingCost("domestic", 10)).toBe(2500);
+      expect(calculateShippingCost("domestic", 10)).toBe(25);
     });
 
     it("prices real-world domestic quotes", () => {
